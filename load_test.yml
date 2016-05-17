@@ -1,9 +1,9 @@
 ---
 execution:
 	- executor: locust
-	concurrency:
-		local: 10
-	ramp-up: 120s
+	concurrency: 10
+	hold-for: 10m
+	ramp-up: 2m
 	scenario:
 		script: load_test.py
 		default-address: http://www.usatoday.com
