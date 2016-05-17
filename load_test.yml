@@ -1,0 +1,9 @@
+---
+execution:
+	- executor: locust
+	concurrency:
+		local: 10
+	ramp-up: 120s
+	scenario:
+		script: load_test.py
+		default-address: http://www.usatoday.com
