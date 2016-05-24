@@ -34,8 +34,8 @@ def main(key_id, secret_key):
         "Async": 1,
         "Timestamp": timestamp,
         "KeyID": key_id,
-        "ConfigVariables[datadog]": 
-        "ConfigVariables[projectid]":
+        "ConfigVariables[datadog_servers]": datadog
+        "ConfigVariables[projectid]": projectid
         "Signature":  base64.b64encode(hmac.new(secret_key, ":".join([API_ACTION, key_id, timestamp]), hashlib.sha256).digest()),
     }
 
