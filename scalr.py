@@ -21,23 +21,7 @@ API_ACTION = "ScriptExecute"
 
 def main(key_id, secret_key):
     timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
-
-    params = {
-        "Action": API_ACTION,
-        "Version": API_VERSION,
-        "AuthVersion": API_AUTH_VERSION,
-        "EnvID": 6,
-        "FarmID": 1988,
-        "FarmRoleID": 6163,
-        "ScriptID": 148,
-        "Timeout": 120,
-        "Async": 1,
-        "Timestamp": timestamp,
-        "KeyID": key_id,
-        "ConfigVariables[datadog_servers]": datadog
-        "ConfigVariables[projectid]": projectid
-        "Signature":  base64.b64encode(hmac.new(secret_key, ":".join([API_ACTION, key_id, timestamp]), hashlib.sha256).digest()),
-    }
+    
     urlparams = "Action="+API_ACTION+"&Version="+API_VERSION+"&AuthVersion="+API_AUTH_VERSION+"&EnvID=6&FarmID=2263&ScriptID=148&Timeout=120&Async=1&Timestamp="+timestamp+"&KeyID="+key_id+"&ConfigVariables[datadog_servers]="+datadog+"&ConfigVariables[projectid]"+projectid+"&Signature="+base64.b64encode(hmac.new(secret_key, ":".join([API_ACTION, key_id, timestamp]), hashlib.sha256).digest())
 
     req = urllib.urlopen(API_URL, urlparams)
