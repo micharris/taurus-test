@@ -13,6 +13,10 @@ options = {
 event_type = sys.argv[3]
 servers = sys.argv[4]
 
+f = open('myfile','w')
+f.write(sys.argv[4]) # python will convert \n to os.linesep
+f.close()
+
 initialize(**options)
  
 
