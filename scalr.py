@@ -38,8 +38,8 @@ def main(key_id, secret_key):
         "ConfigVariables[projectid]": projectid
         "Signature":  base64.b64encode(hmac.new(secret_key, ":".join([API_ACTION, key_id, timestamp]), hashlib.sha256).digest()),
     }
+    urlparams = "Action="+API_ACTION+"&Version="+API_VERSION+"AuthVersion="+API_AUTH_VERSION+"EnvID=6&FarmID=2263&ScriptID=148&Timeout=120&Async=1&Timestamp="+timestamp+"KeyID="+key_id+"&ConfigVariables[datadog_servers]="+datadog+"&ConfigVariables[projectid]"+projectid+"&Signature="+base64.b64encode(hmac.new(secret_key, ":".join([API_ACTION, key_id, timestamp]), hashlib.sha256).digest())
 
-    urlparams = urllib.urlencode(params)
     req = urllib.urlopen(API_URL, urlparams)
 
     return req.read()
