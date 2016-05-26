@@ -1,16 +1,9 @@
 ---
 execution:
-- executor: locust
-concurrency: 10
-ramp-up: 2m
-iterations: 1000
-scenario:
-	default-address: http://www.usatoday.com
-	script: mikes_load_test.py
-reporting:
-- module: final_stats
-summary: true
-percentiles: true
-failed-labels: false
-test-duration: true
-dump-csv: mikes-load-test.csv
+ executor: locust
+ concurrency: 10
+ ramp-up: 1m
+ iterations: 700
+ scenario:
+  default-address: http://www.usatoday.com
+  script: load-test.py
