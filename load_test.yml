@@ -6,4 +6,4 @@ execution:
  iterations: 700
  scenario:
   default-address: http://www.usatoday.com
-  script: load-test.py
+  script: load_test.py
