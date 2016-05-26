@@ -16,7 +16,7 @@ def get_file_path():
 	dirList.sort()
 	return dirList[-1]
 
-def convert_to_CSV():
+def convert_to_CSV(path):
 	errorFlag = 0
 	responseFlag = 0
 	totalErrors = 0
@@ -41,7 +41,7 @@ def convert_to_CSV():
 				except IndexError:
 					print ''
 
-def write_CSV_File():
+def write_CSV_File(path):
 	with open(path+'responseTime.csv', 'w') as csvfile:
 	    fieldnames = ['date', 'endpoint', 'responseTime']
 	    writer = csv.writer(csvfile)
