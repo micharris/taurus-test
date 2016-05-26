@@ -22,7 +22,7 @@ def convert_to_CSV(path):
 	totalErrors = 0
 	totalRequests = 0
 
-	with open(path+"locust.out") as f:
+	with open(path+"/locust.out") as f:
 		for line in f:
 			if(re.search('Percentage of the requests.',line)):
 				responseFlag = 1
@@ -42,7 +42,7 @@ def convert_to_CSV(path):
 					print ''
 
 def write_CSV_File(path):
-	with open(path+'responseTime.csv', 'w') as csvfile:
+	with open(path+'/responseTime.csv', 'w') as csvfile:
 	    fieldnames = ['date', 'endpoint', 'responseTime']
 	    writer = csv.writer(csvfile)
 
