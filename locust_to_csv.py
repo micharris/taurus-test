@@ -71,8 +71,8 @@ def convert_to_CSV(path):
 				except IndexError:
 					print ''
 
-def write_CSV_File(path):
-	with open(path+'/responseTime.csv', 'w') as csvfile:
+def write_CSV_File():
+	with open('/responseTime.csv', 'w') as csvfile:
 	    fieldnames = ['date', 'endpoint', 'responseTime']
 	    writer = csv.writer(csvfile)
 
@@ -80,8 +80,8 @@ def write_CSV_File(path):
 	    for key, value in data.iteritems():
 	    	writer.writerow([now.strftime("%Y-%m-%d-%H-%M"), key, value])
 
-def write_error_file(path):
-	with open(path+'/errorRate.csv', 'w') as csvfile:
+def write_error_file():
+	with open('/errorRate.csv', 'w') as csvfile:
 	    fieldnames = ['date', 'endpoint', 'errorRate']
 	    writer = csv.writer(csvfile)
 
@@ -91,5 +91,5 @@ def write_error_file(path):
 
 path = get_file_path()
 convert_to_CSV(path)
-write_CSV_File(path)
-write_error_file(path)
+write_CSV_File()
+write_error_file()
