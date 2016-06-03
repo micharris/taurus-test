@@ -11,7 +11,6 @@ apiKey = sys.argv[1]
 project = sys.argv[2]
 metric = sys.argv[3]
 
-
 plt.figure(figsize=(18,8), dpi=100)
 plt.xticks(rotation=70)
 
