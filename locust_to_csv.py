@@ -72,7 +72,7 @@ def convert_to_CSV(path):
 					print ''
 
 def write_CSV_File():
-	with open('/responseTime.csv', 'w') as csvfile:
+	with open('responseTime.csv', 'w') as csvfile:
 	    fieldnames = ['date', 'endpoint', 'responseTime']
 	    writer = csv.writer(csvfile)
 
@@ -81,7 +81,7 @@ def write_CSV_File():
 	    	writer.writerow([now.strftime("%Y-%m-%d-%H-%M"), key, value])
 
 def write_error_file():
-	with open('/errorRate.csv', 'w') as csvfile:
+	with open('errorRate.csv', 'w') as csvfile:
 	    fieldnames = ['date', 'endpoint', 'errorRate']
 	    writer = csv.writer(csvfile)
 
