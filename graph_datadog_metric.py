@@ -129,13 +129,13 @@ def drawLegend(legend_values):
 			j = 0
 	
 	if(metric == 'cpu'):
-		metric = 'Idle CPU'
+		x_label = 'Idle CPU'
 
 	if(metric == 'memory'):
-		metric = 'Memory Gigabytes'
+		x_label = 'Memory Gigabytes'
 	
-	plt.title('DataDog metric: '+metric+' for '+project)
-	plt.ylabel(metric, labelpad=20)
+	plt.title('DataDog metric: '+x_label+' for '+project)
+	plt.ylabel(x_label, labelpad=20)
 	plt.xlabel('Runtime of the tests', labelpad=20)
 	plt.savefig(metric+'.png', bbox_inches='tight')
 
