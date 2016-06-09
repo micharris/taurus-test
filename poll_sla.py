@@ -13,13 +13,13 @@ def poll_artifactory(sc):
     
     getResults()
 
-    if(i < 9):
-    	sc.enter(5, 1, poll_artifactory, (sc,))
+    if(i < 12):
+    	sc.enter(60, 1, poll_artifactory, (sc,))
 
 def getResults():
 	url = 'http://artifactory.gannettdigital.com/artifactory/load-test-results/'+projectId+'/SLA/'
 	headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8', 'x-api-key':apiKey}
 	r = requests.get(url, headers=headers)
 
-s.enter(5, 1, poll_artifactory, (s,))
+s.enter(60, 1, poll_artifactory, (s,))
 s.run()
