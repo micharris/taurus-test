@@ -1,10 +1,15 @@
 import re
 import os
 
+def get_file_path():
+	dirList = next(os.walk('.'))[1]
+	dirList.sort()
+	return dirList[-1]
+
 def response_SLA():
 	responseFlag = 0
 
-	with open("stats.log") as f:
+	with open(path+"/locust.out") as f:
 		for line in f:
 			if(re.search('Percentage of the requests.',line)):
 				responseFlag = 1
@@ -29,5 +34,6 @@ def write_response(response):
 	text_file.write(response)
 	text_file.close()
 
-response = response_SLA()
+path = get_file_path()
+response = response_SLA(path)
 write_response(response)
