@@ -6,7 +6,7 @@ def get_file_path():
 	dirList.sort()
 	return dirList[-1]
 
-def response_SLA():
+def response_SLA(path):
 	responseFlag = 0
 
 	with open(path+"/locust.out") as f:
