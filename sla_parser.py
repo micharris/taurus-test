@@ -30,6 +30,8 @@ def response_SLA(path):
 					print ''
 
 def write_response(response):
+	if response is None:
+		response = ''
 	text_file = open("SLA.txt", "w")
 	text_file.write(response)
 	text_file.close()
