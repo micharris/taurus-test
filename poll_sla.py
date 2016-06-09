@@ -18,7 +18,6 @@ def poll_artifactory(sc):
 
 def getResults():
 	url = 'http://artifactory.gannettdigital.com/artifactory/load-test-results/'+projectId+'/SLA/'
-	payload = json.load(open("request.json"))
 	headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8', 'x-api-key':apiKey}
 	r = requests.get(url, headers=headers)
 
