@@ -37,7 +37,7 @@ def getResults(i):
 
 	#when a new file is added - that is the latest SLA result file
 	if i != 1:
-		if num_files > list_count
+		if num_files > list_count:
 			file_list.sort(reverse=True)
 			file_url = file_list[-1]
 			getSLA(file_url)
